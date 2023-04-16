@@ -19,6 +19,14 @@ class ViewController: UIViewController {
 		
 	}
 	
+	@objc func tipChanged(_ sender: UIButton) {
+		
+	}
+	
+	@objc func calculate(_ sender: UIButton) {
+		
+	}
+	
 	// MARK: - Views
 	lazy var billStackView = createStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 26)
 	lazy var billLabel = createLabel(title: "Enter bill total")
@@ -31,9 +39,21 @@ class ViewController: UIViewController {
 	lazy var twentyButton = createButton(title: "20%")
 	lazy var splitLabel = createLabel(title: "Choose Split")
 	lazy var stepperStackView = createStackView(axis: .horizontal, alignment: .fill, distribution: .fill, spacing: 27)
-	lazy var amountPersonLabel = createLabel(title: "2", fontSize: 35, color: color)
+	lazy var splitNumberLabel = createLabel(title: "2", fontSize: 35, color: color)
 	
-	lazy var calculateButton = createButton(title: "Calculate")
+	lazy var calculateButton: UIButton = {
+		let button = UIButton()
+		button.setTitle("Calculate", for: .normal)
+		button.setTitleColor(.white, for: .normal)
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
+		button.backgroundColor = color
+		button.addTarget(
+			self,
+			action: #selector(calculate),
+			for: .touchUpInside)
+		button.translatesAutoresizingMaskIntoConstraints = false
+		return button
+	}()
 	
 	lazy var stepper: UIStepper = {
 		let stepper = UIStepper()
@@ -82,13 +102,13 @@ class ViewController: UIViewController {
 	func createButton(title: String) -> UIButton {
 		let button = UIButton()
 		button.setTitle(title, for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
-//		button.isSelected = true
-		
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)		
 		button.tintColor = .red
-//		button.isSelected = true
 		button.setTitleColor(color, for: .normal)
-		
+		button.addTarget(
+			self,
+			action: #selector(tipChanged),
+			for: .touchUpInside)
 		return button
 	}
 	
@@ -189,7 +209,7 @@ class ViewController: UIViewController {
 		percentStackView.addArrangedSubview(zeroButton)
 		percentStackView.addArrangedSubview(tenButton)
 		percentStackView.addArrangedSubview(twentyButton)
-		stepperStackView.addArrangedSubview(amountPersonLabel)
+		stepperStackView.addArrangedSubview(splitNumberLabel)
 		stepperStackView.addArrangedSubview(stepper)
 		view.addSubview(calculateButton)
 	}
