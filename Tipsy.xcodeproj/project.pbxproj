@@ -13,6 +13,7 @@
 		2F8EE81E29EB7F010021A9A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EE81D29EB7F010021A9A6 /* Assets.xcassets */; };
 		2F8EE82129EB7F010021A9A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EE81F29EB7F010021A9A6 /* LaunchScreen.storyboard */; };
 		2F8EE82A29EB809C0021A9A6 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EE82929EB809C0021A9A6 /* .gitignore */; };
+		2F8EE82D29EBB8020021A9A6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		2F8EE82229EB7F010021A9A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F8EE82929EB809C0021A9A6 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2F8EE82B29EB80B00021A9A6 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */,
 				2F8EE81629EB7F000021A9A6 /* SceneDelegate.swift */,
 				2F8EE81829EB7F000021A9A6 /* ViewController.swift */,
+				2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */,
 				2F8EE81D29EB7F010021A9A6 /* Assets.xcassets */,
 				2F8EE81F29EB7F010021A9A6 /* LaunchScreen.storyboard */,
 				2F8EE82229EB7F010021A9A6 /* Info.plist */,
@@ -143,6 +146,7 @@
 				2F8EE81929EB7F000021A9A6 /* ViewController.swift in Sources */,
 				2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */,
 				2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */,
+				2F8EE82D29EBB8020021A9A6 /* ResultViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +290,8 @@
 				INFOPLIST_FILE = Tipsy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -313,8 +317,8 @@
 				INFOPLIST_FILE = Tipsy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
