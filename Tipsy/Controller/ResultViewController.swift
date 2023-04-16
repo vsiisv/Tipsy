@@ -12,18 +12,22 @@ class ResultViewController: UIViewController {
 	let grayColor = UIColor(red: 149/255, green: 154/255, blue: 153/255, alpha: 1)
 	let greenColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
 	
-	var amount: String?
+	var result: String?
 	var numberOfPeople: String?
 	var tipPercent: String?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		view.backgroundColor = UIColor(red: 248/255, green: 255/255, blue: 253/255, alpha: 1)
 		addViews()
 		addConstraints()
-		amountLabel.text = amount
-		commentLabel.text = "Split between \(numberOfPeople!) people, with \(tipPercent!)% tip."
+		updateUI()
     }
+	
+	func updateUI() {
+		view.backgroundColor = UIColor(red: 248/255, green: 255/255, blue: 253/255, alpha: 1)
+		amountLabel.text = result
+		commentLabel.text = "Split between \(numberOfPeople!) people, with \(tipPercent!)% tip."
+	}
 
 	@objc func recalculate() {
 		dismiss(animated: true)

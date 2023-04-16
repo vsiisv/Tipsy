@@ -11,9 +11,7 @@ class CalculatorViewController: UIViewController {
 	
 	let color = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
 	
-	var percent = 0.0
-	var numberOfPeople = 2
-	var userInput = ""
+	var calculator = Calculator()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -29,39 +27,30 @@ class CalculatorViewController: UIViewController {
 		twentyButton.isSelected = false
 		
 		sender.isSelected = true
-		
-		guard let title = sender.currentTitle else { return }
-		guard let tittleWithoutPercent = Double(String(title.dropLast())) else { return }
-		
-		percent = tittleWithoutPercent / 100
-		
+
+		calculator.calculatePercent(percent: sender.currentTitle)
 		
 		billTextfield.endEditing(true)
 	}
 	
 	@objc func calculate(_ sender: UIButton) {
 		
-		guard let userInput = billTextfield.text else { return }
-		self.userInput = userInput
-		
-		
-		print(percent)
-		print(numberOfPeople)
-		print(userInput)
-		
-		let amount = (Double(userInput)! + (Double(userInput)! * percent)) / Double(numberOfPeople)
-		
-		let destinationVC = ResultViewController()
-		destinationVC.amount = String(format: "%.2f", amount)
-		destinationVC.tipPercent = String(Int(0.2 * 100))
-		destinationVC.numberOfPeople = String(numberOfPeople)
-		present(destinationVC, animated: true)
+		calculator.userInput(billTextfield.text)
+		presentView()
 	}
 	
 	@objc func stepperValueChanged(_ sender: UIStepper) {
-		numberOfPeople = Int(sender.value)
-		splitNumberLabel.text = String(numberOfPeople) //String(format: "%.f", sender.value)
+		calculator.stepperValue(sender.value)
+		splitNumberLabel.text = calculator.getNumberOfPeople()
 		
+	}
+	
+	func presentView() {
+		let destinationVC = ResultViewController()
+		destinationVC.result = calculator.getResult()
+		destinationVC.tipPercent = calculator.getPercent()
+		destinationVC.numberOfPeople = calculator.getNumberOfPeople()
+		present(destinationVC, animated: true)
 	}
 	
 	// MARK: - Views
