@@ -7,10 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CalculatorViewController: UIViewController {
 	
 	let color = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
-
+	
+	var percent = 0.0
+	var numberOfPeople = 2
+	var userInput = ""
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		view.backgroundColor = UIColor(red: 248/255, green: 255/255, blue: 253/253, alpha: 1)
@@ -20,10 +24,43 @@ class ViewController: UIViewController {
 	}
 	
 	@objc func tipChanged(_ sender: UIButton) {
+		zeroButton.isSelected = false
+		tenButton.isSelected = false
+		twentyButton.isSelected = false
 		
+		sender.isSelected = true
+		
+		guard let title = sender.currentTitle else { return }
+		guard let tittleWithoutPercent = Double(String(title.dropLast())) else { return }
+		
+		percent = tittleWithoutPercent / 100
+		
+		
+		billTextfield.endEditing(true)
 	}
 	
 	@objc func calculate(_ sender: UIButton) {
+		
+		guard let userInput = billTextfield.text else { return }
+		self.userInput = userInput
+		
+		
+		print(percent)
+		print(numberOfPeople)
+		print(userInput)
+		
+		let amount = (Double(userInput)! + (Double(userInput)! * percent)) / Double(numberOfPeople)
+		
+		let destinationVC = ResultViewController()
+		destinationVC.amount = String(format: "%.2f", amount)
+		destinationVC.tipPercent = String(Int(0.2 * 100))
+		destinationVC.numberOfPeople = String(numberOfPeople)
+		present(destinationVC, animated: true)
+	}
+	
+	@objc func stepperValueChanged(_ sender: UIStepper) {
+		numberOfPeople = Int(sender.value)
+		splitNumberLabel.text = String(numberOfPeople) //String(format: "%.f", sender.value)
 		
 	}
 	
@@ -57,9 +94,14 @@ class ViewController: UIViewController {
 	
 	lazy var stepper: UIStepper = {
 		let stepper = UIStepper()
+		stepper.value = 2
 		stepper.minimumValue = 2
 		stepper.maximumValue = 25
 		stepper.stepValue = 1
+		stepper.addTarget(
+			self,
+			action: #selector(stepperValueChanged),
+			for: .touchUpInside)
 		return stepper
 	}()
 	
@@ -100,10 +142,10 @@ class ViewController: UIViewController {
 	}
 	
 	func createButton(title: String) -> UIButton {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle(title, for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)		
-		button.tintColor = .red
+		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
+		button.tintColor = color
 		button.setTitleColor(color, for: .normal)
 		button.addTarget(
 			self,
