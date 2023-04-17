@@ -3,7 +3,7 @@
 A project based on a challenge from Angela's course.
 Bill splitting, tip calculating app.
 
-- Layout of the UI by code. 
+- UI layout using code 
 - Optional values
 - multi-screen apps
 - MVC?...
