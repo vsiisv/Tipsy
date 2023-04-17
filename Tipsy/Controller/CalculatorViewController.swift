@@ -68,11 +68,12 @@ class CalculatorViewController: UIViewController {
 	lazy var splitNumberLabel = createLabel(title: "2", fontSize: 35, color: color)
 	
 	lazy var calculateButton: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle("Calculate", for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
 		button.backgroundColor = color
+		button.layer.cornerRadius = 10
 		button.addTarget(
 			self,
 			action: #selector(calculate),

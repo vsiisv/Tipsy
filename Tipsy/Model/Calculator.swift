@@ -44,8 +44,4 @@ struct Calculator {
 	func getNumberOfPeople() -> String {
 		return String(format: "%.0f", numberOfPeople)
 	}
-	
-//	func getNumberOfPeople(count: String) -> String {
-//		
-//	}
 }

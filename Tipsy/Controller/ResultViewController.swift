@@ -46,11 +46,12 @@ class ResultViewController: UIViewController {
 	}()
 	
 	lazy var recalculateButton: UIButton = {
-		let button = UIButton()
+		let button = UIButton(type: .system)
 		button.setTitle("Recalculate", for: .normal)
 		button.setTitleColor(.white, for: .normal)
 		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
 		button.backgroundColor = greenColor
+		button.layer.cornerRadius = 10
 		button.addTarget(
 			self,
 			action: #selector(recalculate),
