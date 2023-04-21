@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F520FBF29F103C60049A2D8 /* BillStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FBE29F103C60049A2D8 /* BillStackView.swift */; };
 		2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */; };
 		2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE81629EB7F000021A9A6 /* SceneDelegate.swift */; };
 		2F8EE81929EB7F000021A9A6 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE81829EB7F000021A9A6 /* CalculatorViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F520FBE29F103C60049A2D8 /* BillStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillStackView.swift; sourceTree = "<group>"; };
 		2F8EE81129EB7F000021A9A6 /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2F8EE81629EB7F000021A9A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -42,6 +44,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F520FBD29F102AE0049A2D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2F520FBE29F103C60049A2D8 /* BillStackView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		2F8EE80829EB7F000021A9A6 = {
 			isa = PBXGroup;
 			children = (
@@ -64,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				2FC04FDB29EC20D800561AAE /* Model */,
+				2F520FBD29F102AE0049A2D8 /* View */,
 				2FC04FDE29EC3FE900561AAE /* Controller */,
 				2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */,
 				2F8EE81629EB7F000021A9A6 /* SceneDelegate.swift */,
@@ -162,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F520FBF29F103C60049A2D8 /* BillStackView.swift in Sources */,
 				2F8EE81929EB7F000021A9A6 /* CalculatorViewController.swift in Sources */,
 				2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */,
 				2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */,

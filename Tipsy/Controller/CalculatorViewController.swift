@@ -30,12 +30,12 @@ class CalculatorViewController: UIViewController {
 
 		calculator.calculatePercent(percent: sender.currentTitle)
 		
-		billTextfield.endEditing(true)
+		billStackView.endEditing()
 	}
 	
 	@objc func calculate(_ sender: UIButton) {
 		
-		calculator.userInput(billTextfield.text)
+		calculator.userInput(billStackView.getTextFieldText())
 		presentView()
 	}
 	
@@ -54,8 +54,7 @@ class CalculatorViewController: UIViewController {
 	}
 	
 	// MARK: - Views
-	lazy var billStackView = createStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 26)
-	lazy var billLabel = createLabel(title: "Enter bill total")
+	lazy var billStackView = BillStackView()
 	
 	lazy var tipSplitStackView = createStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 26)
 	lazy var tipLabel = createLabel(title: "Select tip")
@@ -101,18 +100,7 @@ class CalculatorViewController: UIViewController {
 		view.translatesAutoresizingMaskIntoConstraints = false
 		return view
 	}()
-	
-	lazy var billTextfield: UITextField = {
-		let textField = UITextField()
-		textField.textColor = color
-		textField.font = UIFont.systemFont(ofSize: 40)
-		textField.textAlignment = .center
-		textField.placeholder = "e.g. 123.56"
-		textField.keyboardType = .decimalPad
-		textField.tintColor = .darkGray
-		return textField
-	}()
-	
+
 	func createStackView(axis: NSLayoutConstraint.Axis, alignment: UIStackView.Alignment, distribution: UIStackView.Distribution, spacing: CGFloat) -> UIStackView {
 		let stackView = UIStackView()
 		stackView.axis = axis
@@ -179,9 +167,6 @@ class CalculatorViewController: UIViewController {
 			splitLabel.heightAnchor.constraint(equalToConstant: 30),
 			splitLabel.leadingAnchor.constraint(equalTo: tipSplitStackView.leadingAnchor, constant: 30),
 			splitLabel.trailingAnchor.constraint(equalTo: tipSplitStackView.trailingAnchor, constant: -30),
-			billLabel.heightAnchor.constraint(equalToConstant: 30),
-			billLabel.leadingAnchor.constraint(equalTo: billStackView.leadingAnchor, constant: 50),
-			billLabel.trailingAnchor.constraint(equalTo: billStackView.trailingAnchor, constant: -50)
 		])
 	}
 	
@@ -230,8 +215,6 @@ class CalculatorViewController: UIViewController {
 	func addSubviews() {
 		view.addSubview(viewParameter)
 		view.addSubview(billStackView)
-		billStackView.addArrangedSubview(billLabel)
-		billStackView.addArrangedSubview(billTextfield)
 		
 		viewParameter.addSubview(tipSplitStackView)
 		tipSplitStackView.addArrangedSubview(tipLabel)
