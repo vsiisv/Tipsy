@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F3107B229F29180000A4443 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3107B129F29180000A4443 /* CustomButton.swift */; };
 		2F520FBF29F103C60049A2D8 /* BillStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F520FBE29F103C60049A2D8 /* BillStackView.swift */; };
 		2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */; };
 		2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE81629EB7F000021A9A6 /* SceneDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F3107B129F29180000A4443 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		2F520FBE29F103C60049A2D8 /* BillStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillStackView.swift; sourceTree = "<group>"; };
 		2F8EE81129EB7F000021A9A6 /* Tipsy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipsy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8EE81429EB7F000021A9A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 			isa = PBXGroup;
 			children = (
 				2F520FBE29F103C60049A2D8 /* BillStackView.swift */,
+				2F3107B129F29180000A4443 /* CustomButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				2F520FBF29F103C60049A2D8 /* BillStackView.swift in Sources */,
 				2F8EE81929EB7F000021A9A6 /* CalculatorViewController.swift in Sources */,
 				2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */,
+				2F3107B229F29180000A4443 /* CustomButton.swift in Sources */,
 				2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */,
 				2FC04FDD29EC21E000561AAE /* Calculator.swift in Sources */,
 				2F8EE82D29EBB8020021A9A6 /* ResultViewController.swift in Sources */,

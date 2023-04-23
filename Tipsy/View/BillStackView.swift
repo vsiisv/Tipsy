@@ -30,7 +30,7 @@ class BillStackView: UIStackView {
 	
 	private lazy var textField: UITextField = {
 		let textField = UITextField()
-		textField.textColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
+		textField.textColor = UIColor(named: "Green")
 		textField.font = UIFont.systemFont(ofSize: 40)
 		textField.textAlignment = .center
 		textField.placeholder = "e.g. 123.56"

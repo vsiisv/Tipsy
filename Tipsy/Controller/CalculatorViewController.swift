@@ -59,27 +59,9 @@ class CalculatorViewController: UIViewController {
 	lazy var tipSplitStackView = createStackView(axis: .vertical, alignment: .center, distribution: .fill, spacing: 26)
 	lazy var tipLabel = createLabel(title: "Select tip")
 	lazy var percentStackView = createStackView(axis: .horizontal, alignment: .fill, distribution: .fillProportionally, spacing: 0)
-	lazy var zeroButton = createButton(title: "0%")
-	lazy var tenButton = createButton(title: "10%")
-	lazy var twentyButton = createButton(title: "20%")
 	lazy var splitLabel = createLabel(title: "Choose Split")
 	lazy var stepperStackView = createStackView(axis: .horizontal, alignment: .fill, distribution: .fill, spacing: 27)
 	lazy var splitNumberLabel = createLabel(title: "2", fontSize: 35, color: color)
-	
-	lazy var calculateButton: UIButton = {
-		let button = UIButton(type: .system)
-		button.setTitle("Calculate", for: .normal)
-		button.setTitleColor(.white, for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
-		button.backgroundColor = color
-		button.layer.cornerRadius = 10
-		button.addTarget(
-			self,
-			action: #selector(calculate),
-			for: .touchUpInside)
-		button.translatesAutoresizingMaskIntoConstraints = false
-		return button
-	}()
 	
 	lazy var stepper: UIStepper = {
 		let stepper = UIStepper()
@@ -119,18 +101,29 @@ class CalculatorViewController: UIViewController {
 		return label
 	}
 	
-	func createButton(title: String) -> UIButton {
-		let button = UIButton(type: .system)
-		button.setTitle(title, for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
-		button.tintColor = color
-		button.setTitleColor(color, for: .normal)
-		button.addTarget(
-			self,
-			action: #selector(tipChanged),
-			for: .touchUpInside)
+	lazy var zeroButton: CustomButton = {
+		let button = CustomButton(title: "0%")
+		button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
 		return button
-	}
+	}()
+	
+	lazy var tenButton: CustomButton = {
+		let button = CustomButton(title: "10%")
+		button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
+		return button
+	}()
+	
+	lazy var twentyButton: CustomButton = {
+		let button = CustomButton(title: "20%")
+		button.addTarget(self, action: #selector(tipChanged), for: .touchUpInside)
+		return button
+	}()
+	
+	lazy var calculateButton: CustomButton = {
+		let button = CustomButton(title: "Calculate")
+		button.addTarget(self, action: #selector(calculate), for: .touchUpInside)
+		return button
+	}()
 	
 	
 	// MARK: - Constraints' functions
