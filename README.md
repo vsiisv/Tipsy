@@ -8,5 +8,4 @@ Bill splitting, tip calculating app.
 - multi-screen apps
 - MVC?...
 
-https://user-images.githubusercontent.com/129242125/232357358-12d4fa72-ead1-4e0e-bf7a-8d0051f0a325.mp4
-
+![tipsy](https://user-images.githubusercontent.com/129242125/233955812-1973a349-5f9f-4024-bd81-615b7628c62c.gif)
