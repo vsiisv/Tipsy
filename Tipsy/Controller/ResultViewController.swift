@@ -9,8 +9,8 @@ import UIKit
 
 class ResultViewController: UIViewController {
 	
-	let grayColor = UIColor(red: 149/255, green: 154/255, blue: 153/255, alpha: 1)
-	let greenColor = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
+	private let grayColor = UIColor(named: Colors.gray)
+	private let greenColor = UIColor(named: Colors.green)
 	
 	var result: String?
 	var numberOfPeople: String?
@@ -24,7 +24,7 @@ class ResultViewController: UIViewController {
     }
 	
 	func updateUI() {
-		view.backgroundColor = UIColor(red: 248/255, green: 255/255, blue: 253/255, alpha: 1)
+		view.backgroundColor = UIColor(named: Colors.white)
 		amountLabel.text = result
 		commentLabel.text = "Split between \(numberOfPeople!) people, with \(tipPercent!)% tip."
 	}
@@ -34,9 +34,9 @@ class ResultViewController: UIViewController {
 	}
 
 	// MARK: - Views
-	lazy var totalPerPersonLabel = createLabel(title: "Total per person", color: grayColor, fontSize: 30)
-	lazy var amountLabel = createLabel(title: "56.32", color: greenColor, fontSize: 45, weight: .bold)
-	lazy var commentLabel = createLabel(title: "Split between 2 people, with 10% tip.", color: grayColor, fontSize: 25)
+	lazy var totalPerPersonLabel = createLabel(title: "Total per person", color: grayColor!, fontSize: 30)
+	lazy var amountLabel = createLabel(title: "56.32", color: greenColor!, fontSize: 45, weight: .bold)
+	lazy var commentLabel = createLabel(title: "Split between 2 people, with 10% tip.", color: grayColor!, fontSize: 25)
 
 	lazy var amountView: UIView = {
 		let view = UIView()

@@ -19,7 +19,7 @@ class ViewParameter: UIView {
 	//MARK: - subviews
 	private lazy var tipLabel = CustomLabel(text: "Select tip")
 	private lazy var splitLabel = CustomLabel(text: "Choose Split")
-	private lazy var splitNumberLabel = CustomLabel(text: "2", fontSize: 35, textAlignment: .center, color: UIColor(named: "Green")!)
+	private lazy var splitNumberLabel = CustomLabel(text: "2", fontSize: 35, textAlignment: .center, color: UIColor(named: Colors.green)!)
 	
 	private lazy var stepper: UIStepper = {
 		let stepper = UIStepper()

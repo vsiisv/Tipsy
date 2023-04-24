@@ -19,6 +19,7 @@
 		2F8EE82D29EBB8020021A9A6 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */; };
 		2FC04FDD29EC21E000561AAE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC04FDC29EC21E000561AAE /* Calculator.swift */; };
 		2FCD614729F60EA100D9F9B8 /* ViewParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD614629F60EA100D9F9B8 /* ViewParameter.swift */; };
+		2FCD614A29F68B8600D9F9B8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD614929F68B8600D9F9B8 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2FC04FDC29EC21E000561AAE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		2FCD614629F60EA100D9F9B8 /* ViewParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewParameter.swift; sourceTree = "<group>"; };
+		2FCD614929F68B8600D9F9B8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 		2F8EE81329EB7F000021A9A6 /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
+				2FCD614829F68B3D00D9F9B8 /* Resources */,
 				2FC04FDB29EC20D800561AAE /* Model */,
 				2F520FBD29F102AE0049A2D8 /* View */,
 				2FC04FDE29EC3FE900561AAE /* Controller */,
@@ -109,6 +112,14 @@
 				2F8EE82C29EBB8020021A9A6 /* ResultViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2FCD614829F68B3D00D9F9B8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2FCD614929F68B8600D9F9B8 /* Colors.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 				2F520FBF29F103C60049A2D8 /* BillStackView.swift in Sources */,
 				2F8EE81929EB7F000021A9A6 /* CalculatorViewController.swift in Sources */,
 				2F8EE81529EB7F000021A9A6 /* AppDelegate.swift in Sources */,
+				2FCD614A29F68B8600D9F9B8 /* Colors.swift in Sources */,
 				2FCD614729F60EA100D9F9B8 /* ViewParameter.swift in Sources */,
 				2F3107B229F29180000A4443 /* CustomButton.swift in Sources */,
 				2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */,

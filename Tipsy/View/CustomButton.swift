@@ -9,7 +9,7 @@ import UIKit
 
 class CustomButton: UIButton {
 	
-	let color = UIColor(named: "Green")
+	let color = UIColor(named: Colors.green)
 	
 	convenience init(title: String, type: UIButton.ButtonType = .system) {
 		self.init(type: type)

@@ -9,8 +9,6 @@ import UIKit
 
 class CalculatorViewController: UIViewController {
 	
-	let color = UIColor(red: 0/255, green: 176/255, blue: 107/255, alpha: 1)
-
 	var calculator = Calculator()
 	
 	// MARK: - Views
@@ -30,7 +28,7 @@ class CalculatorViewController: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		viewParameter.delegate = self
-		view.backgroundColor = UIColor(red: 248/255, green: 255/255, blue: 253/253, alpha: 1)
+		view.backgroundColor = UIColor(named: Colors.white)
 		addSubviews()
 		setupConstraints()
 	}
