@@ -28,5 +28,6 @@ class CustomButton: UIButton {
 			tintColor = color
 			setTitleColor(color, for: .normal)
 		}
+		translatesAutoresizingMaskIntoConstraints = false
 	}
 }

@@ -9,17 +9,6 @@ import UIKit
 
 class BillStackView: UIStackView {
 	
-	override init(frame: CGRect) {
-		super.init(frame: frame)
-		setupStackView()
-		addSubviews()
-		setupConstraints()
-	}
-	
-	required init(coder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
-	}
-	
 	private lazy var titleLabel: UILabel = {
 		let label = UILabel()
 		label.text = "Enter bill total"
@@ -38,6 +27,18 @@ class BillStackView: UIStackView {
 		textField.tintColor = .darkGray
 		return textField
 	}()
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		setupStackView()
+		addSubviews()
+		setupConstraints()
+	}
+	
+	required init(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
 	
 	func endEditing() {
 		textField.endEditing(true)
