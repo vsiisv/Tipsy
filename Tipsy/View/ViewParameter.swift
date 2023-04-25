@@ -165,7 +165,7 @@ private extension ViewParameter {
 	}
 	
 	func setupView() {
-		backgroundColor = UIColor(red: 215/255, green: 249/255, blue: 235/255, alpha: 1)
+		backgroundColor = UIColor(named: Colors.lightGreen)
 		translatesAutoresizingMaskIntoConstraints = false
 	}
 

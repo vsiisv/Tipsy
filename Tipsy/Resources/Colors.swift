@@ -9,6 +9,7 @@ import Foundation
 
 enum Colors {
 	static let green = "green"
+	static let lightGreen = "lightGreen"
 	static let white = "white"
 	static let gray = "gray"
 }

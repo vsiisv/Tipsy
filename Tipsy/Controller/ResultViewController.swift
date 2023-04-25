@@ -16,122 +16,64 @@ class ResultViewController: UIViewController {
 	var numberOfPeople: String?
 	var tipPercent: String?
 	
+	private lazy var amountView = PerPersonView()
+	private lazy var commentLabel: CustomLabel = {
+		let label = CustomLabel(text: "", fontSize: 25, textAlignment: .center, color: UIColor(named: Colors.gray)!)
+		label.numberOfLines = 0
+		return label
+	}()
+	
+	private lazy var recalculateButton: CustomButton = {
+		let button = CustomButton(title: "Recalculate")
+		button.addTarget(self, action: #selector(recalculate), for: .touchUpInside)
+		return button
+	}()
+	
     override func viewDidLoad() {
         super.viewDidLoad()
-		addViews()
-		addConstraints()
+		addSubviews()
+		setupConstraints()
 		updateUI()
     }
 	
 	func updateUI() {
 		view.backgroundColor = UIColor(named: Colors.white)
-		amountLabel.text = result
+		amountView.setupTotal(result)
 		commentLabel.text = "Split between \(numberOfPeople!) people, with \(tipPercent!)% tip."
 	}
 
-	@objc func recalculate() {
+	@objc
+	func recalculate() {
 		dismiss(animated: true)
 	}
 
-	// MARK: - Views
-	lazy var totalPerPersonLabel = createLabel(title: "Total per person", color: grayColor!, fontSize: 30)
-	lazy var amountLabel = createLabel(title: "56.32", color: greenColor!, fontSize: 45, weight: .bold)
-	lazy var commentLabel = createLabel(title: "Split between 2 people, with 10% tip.", color: grayColor!, fontSize: 25)
+}
 
-	lazy var amountView: UIView = {
-		let view = UIView()
-		view.backgroundColor = UIColor(red: 215/255, green: 249/255, blue: 235/255, alpha: 1)
-		view.translatesAutoresizingMaskIntoConstraints = false
-		return view
-	}()
-	
-	lazy var recalculateButton: UIButton = {
-		let button = UIButton(type: .system)
-		button.setTitle("Recalculate", for: .normal)
-		button.setTitleColor(.white, for: .normal)
-		button.titleLabel?.font = UIFont.systemFont(ofSize: 35)
-		button.backgroundColor = greenColor
-		button.layer.cornerRadius = 10
-		button.addTarget(
-			self,
-			action: #selector(recalculate),
-			for: .touchUpInside)
-		button.translatesAutoresizingMaskIntoConstraints = false
-		return button
-	}()
-	
-	func createLabel(title: String, color: UIColor, fontSize: CGFloat, weight: UIFont.Weight = .regular) -> UILabel {
-		let label = UILabel()
-		label.font = UIFont.systemFont(ofSize: fontSize, weight: weight)
-		label.text = title
-		label.textAlignment = .center
-		label.textColor = color
-		label.numberOfLines = 0
-		label.translatesAutoresizingMaskIntoConstraints = false
-		return label
+private extension ResultViewController {
+	// MARK: - add subviews
+	func addSubviews() {
+		view.addSubview(amountView)
+		view.addSubview(commentLabel)
+		view.addSubview(recalculateButton)
 	}
 	
-	// MARK: - Constraints
-	
-	func setViewConstraints() {
+	// MARK: - add constraints
+	func setupConstraints() {
 		NSLayoutConstraint.activate([
 			amountView.topAnchor.constraint(equalTo: view.topAnchor),
 			amountView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
 			amountView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-			amountView.heightAnchor.constraint(equalToConstant: 300)
-		])
-	}
-	
-	func setTotalLabelConstraints() {
-		NSLayoutConstraint.activate([
-			totalPerPersonLabel.leadingAnchor.constraint(equalTo: amountView.leadingAnchor),
-			totalPerPersonLabel.trailingAnchor.constraint(equalTo: amountView.trailingAnchor),
-			totalPerPersonLabel.heightAnchor.constraint(equalToConstant: 36),
-			totalPerPersonLabel.centerYAnchor.constraint(equalTo: amountView.centerYAnchor)
-		])
-	}
-	
-	func setAmountLabelConstraints() {
-		NSLayoutConstraint.activate([
-			amountLabel.heightAnchor.constraint(equalToConstant: 100),
-			amountLabel.topAnchor.constraint(equalTo: totalPerPersonLabel.bottomAnchor),
-			amountLabel.leadingAnchor.constraint(equalTo: amountView.leadingAnchor),
-			amountLabel.trailingAnchor.constraint(equalTo: amountView.trailingAnchor),
-		])
-	}
-	
-	func setCommentConstraints() {
-		NSLayoutConstraint.activate([
+			amountView.heightAnchor.constraint(equalToConstant: 300),
+			
 			commentLabel.heightAnchor.constraint(equalToConstant: 117),
 			commentLabel.topAnchor.constraint(equalTo: amountView.bottomAnchor, constant: 5),
 			commentLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
-			commentLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50)
-		])
-	}
-	
-	func setRecalculateButtonConstraints() {
-		NSLayoutConstraint.activate([
+			commentLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+			
 			recalculateButton.widthAnchor.constraint(greaterThanOrEqualToConstant: 200),
 			recalculateButton.heightAnchor.constraint(equalToConstant: 54),
 			recalculateButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
 			recalculateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
 		])
-	}
-	
-	// MARK: - Add subviews and Constraints
-	func addViews() {
-		view.addSubview(amountView)
-		amountView.addSubview(totalPerPersonLabel)
-		amountView.addSubview(amountLabel)
-		view.addSubview(commentLabel)
-		view.addSubview(recalculateButton)
-	}
-	
-	func addConstraints() {
-		setViewConstraints()
-		setTotalLabelConstraints()
-		setAmountLabelConstraints()
-		setCommentConstraints()
-		setRecalculateButtonConstraints()
 	}
 }

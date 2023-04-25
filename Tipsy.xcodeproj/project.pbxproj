@@ -20,6 +20,7 @@
 		2FC04FDD29EC21E000561AAE /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC04FDC29EC21E000561AAE /* Calculator.swift */; };
 		2FCD614729F60EA100D9F9B8 /* ViewParameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD614629F60EA100D9F9B8 /* ViewParameter.swift */; };
 		2FCD614A29F68B8600D9F9B8 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD614929F68B8600D9F9B8 /* Colors.swift */; };
+		2FCD614C29F6AC7400D9F9B8 /* PerPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCD614B29F6AC7400D9F9B8 /* PerPersonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		2FC04FDC29EC21E000561AAE /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		2FCD614629F60EA100D9F9B8 /* ViewParameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewParameter.swift; sourceTree = "<group>"; };
 		2FCD614929F68B8600D9F9B8 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		2FCD614B29F6AC7400D9F9B8 /* PerPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerPersonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				2F3107B329F50E44000A4443 /* CustomLabel.swift */,
 				2F520FBE29F103C60049A2D8 /* BillStackView.swift */,
 				2FCD614629F60EA100D9F9B8 /* ViewParameter.swift */,
+				2FCD614B29F6AC7400D9F9B8 /* PerPersonView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				2F3107B229F29180000A4443 /* CustomButton.swift in Sources */,
 				2F8EE81729EB7F000021A9A6 /* SceneDelegate.swift in Sources */,
 				2FC04FDD29EC21E000561AAE /* Calculator.swift in Sources */,
+				2FCD614C29F6AC7400D9F9B8 /* PerPersonView.swift in Sources */,
 				2F8EE82D29EBB8020021A9A6 /* ResultViewController.swift in Sources */,
 				2F3107B429F50E44000A4443 /* CustomLabel.swift in Sources */,
 			);
