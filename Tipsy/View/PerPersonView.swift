@@ -57,7 +57,7 @@ private extension PerPersonView {
 		translatesAutoresizingMaskIntoConstraints = false
 	}
 }
-
+//
 extension PerPersonView {
 	func setupTotal(_ money: String?) {
 		guard let money else { return }
